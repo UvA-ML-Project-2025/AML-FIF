@@ -30,7 +30,6 @@ Novelty: We injected Dropout (p=0.5) into the final fully connected layers. This
 MixUp augmentation
 Instead of showing the model standard images, we blended pairs of images of birds and mixed their labels. 
 Why: This prevents the model from being "overconfident" on noisy data and forces it to learn the concept of a bird rather than the specific background of a training image. 
-The "Lens": Random Resized Crop 
 We replaced standard resizing with aggressive cropping. This acts as an "automatic object detector," forcing the model to recognize a bird by just its head, wing, or tail, rather than relying on the full shape every time. 
 
 
