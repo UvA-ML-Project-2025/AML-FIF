@@ -5,10 +5,6 @@ This repository contains a deep learning project focused on fine-grained bird sp
 
 
 Repository Contents:
-├── BaselineNB.ipynb             
-├── aml2025-improved-model.ipynb 
-└── README.md
-
 BaselineNB.ipynb
 Establishes the baseline model and performance, using a pretrained ResNet50 model. 
 
