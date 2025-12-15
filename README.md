@@ -20,24 +20,18 @@ Dataset size: ~4,000 images
 Constraint: No pretrained weights
 
 
-Model Architecture
-Architecture: Custom ResNet18 with Dropout 
-We implemented a Residual Network (ResNet) from scratch to allow deep feature extraction without vanishing gradients. 
-Novelty: We injected Dropout (p=0.5) into the final fully connected layers. This is non-standard for ResNets (which usually rely on Batch Norm) but was crucial to prevent our specific model from memorizing the small dataset. 
+Baseline Model: ResNet50
+ResNet50 is a 50-layer deep convolutional neural network introduced in 2015 and designed for image recognition. It uses residual (skip) connections that make training deep networks stable and effective. The model was originally trained on ImageNet, has 25.6 Million parameters, and achieves a 76.0% top-1 accuracy on ImageNet.
+
+Test set accuracy: 46.33%
+
+Alternative model: Custom ResNet18 with Dropout
+Our alternative model is a custom ResNet18 convolutional neural network for bird image classification. To improve generalization on a small dataset, Dropout (p=0.5) was added to the final fully connected layers. Training used MixUp augmentation, where images and labels of different bird were blended, encouraging the model to learn shared visual characteristics of birds rather than memorizing species-specific backgrounds. Additionally, aggressive Random Resized Cropping was applied, forcing the model to recognize birds from partial cues such as the head, wing, or tail instead of relying on the full bird silhouette.
+
+Test set accuracy: 25.18%
 
 
-MixUp augmentation
-Instead of showing the model standard images, we blended pairs of images of birds and mixed their labels. 
-Why: This prevents the model from being "overconfident" on noisy data and forces it to learn the concept of a bird rather than the specific background of a training image. 
-We replaced standard resizing with aggressive cropping. This acts as an "automatic object detector," forcing the model to recognize a bird by just its head, wing, or tail, rather than relying on the full shape every time. 
-
-
-Results
-Random chance: 0.5%
-Simple CNN baseline: ~5–8%
-Final model (custom ResNet18): 28.75% Top-1 accuracy
-This represents a 57× improvement over random guessing under strict training-from-scratch constraints.
-
+Conclusion: We are trading accuracy for data independence. Our model proves learning is possible without reliance on massive external datasets, but with lower performance. 
 
 
 
