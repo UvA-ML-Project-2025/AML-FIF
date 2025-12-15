@@ -1,18 +1,28 @@
 Deep Learning from Scratch: Fine-Grained Bird Classification
 
-Overview
+Overview:
+
 This repository contains a deep learning project focused on fine-grained bird species classification, the Challenge is distinguishing 200 visually similar bird species starting from a completely blank 'brain' (no pre-training) without memorizing the limited training data.
 
 
 Repository Contents:
-├── BaselineNB.ipynb: Establishes the baseline model and performance, using a pretrained ResNet50 model. 
-├── aml2025-improved-model.ipynb: The main notebook containing the alternative solution. It implements a custom ResNet18-style architecture trained from scratch, along with advanced regularization and augmentation techniques.
+
+├── BaselineNB.ipynb
+Establishes the baseline model and performance, using a pretrained ResNet50 model. 
+
+├── aml2025-improved-model.ipynb
+The main notebook containing the alternative solution. It implements a custom ResNet18-style architecture trained from scratch, along with advanced regularization and augmentation techniques.
+
 └── README.md
 
 
+
 Assignment:
+
 Task: Fine-grained image classification (200 bird species)
+
 Dataset size: ~4,000 images
+
 Constraint: No pretrained weights
 
 
